@@ -1,3 +1,8 @@
+
+
+
+
+
 /* Catppuccin Mocha theme for Waybar with Material You aesthetics */
 
 @define-color base #1e1e2e;
@@ -44,72 +49,176 @@
 
 /* Custom cava-music module styling */
 #custom-cava-music {
-  font-family: "JetBrainsMono Nerd Font Propo", monospace;
-  font-size: 16px;
-  padding: 0px 10px;
-  margin: 3px 0px;
-  min-width: 120px;
-  border-radius: 16px;
-  background-color:@surface0; 
-  color: @red; 
-  transition: all 0.3s ease;
+    font-family: "JetBrainsMono Nerd Font Propo", monospace;
+    font-size: 16px;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    min-width: 120px;
+    border-radius: 16px;
+    background-color:@surface0; 
+    color: @red; 
+    transition: all 0.3s ease;
 }
 
 #custom-cava-music:hover {
-  background-color: rgba(49, 50, 68, 0.8);
+    background-color: rgba(49, 50, 68, 0.8);
 }
 
 /* Custom playerctl module styling */
 #custom-playerctl {
-  font-family: "JetBrainsMono Nerd Font Propo", monospace;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0px 5px;
-  margin: 3px 0px;
-  border-radius: 16px;
-  background-color:@surface0; 
-  min-width: 200px;
-  color: @lavender; /* Text from Catppuccin */
-  transition: all 0.3s ease;
+    font-family: "JetBrainsMono Nerd Font Propo", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px 5px;
+    margin: 3px 0px;
+    border-radius: 16px;
+    background-color:@surface0; 
+    min-width: 200px;
+    color: @lavender; /* Text from Catppuccin */
+    transition: all 0.3s ease;
 }
 
 #custom-playerctl.playing {
-  background-color: rgba(137, 180, 250, 0.2); /* Blue from Catppuccin */
-  border-bottom: 2px solid #89b4fa;
+    background-color: rgba(137, 180, 250, 0.2); /* Blue from Catppuccin */
+    border-bottom: 2px solid #89b4fa;
 }
 
 #custom-playerctl.paused {
-  background-color: rgba(249, 226, 175, 0.2); /* Yellow from Catppuccin */
-  border-bottom: 2px solid #f9e2af;
-  font-style: italic;
+    background-color: rgba(249, 226, 175, 0.2); /* Yellow from Catppuccin */
+    border-bottom: 2px solid #f9e2af;
+    font-style: italic;
 }
 
 #custom-playerctl.stopped {
-  background-color: rgba(243, 139, 168, 0.2); /* Red from Catppuccin */
-  border-bottom: 2px solid #f38ba8;
+    background-color: rgba(243, 139, 168, 0.2); /* Red from Catppuccin */
+    border-bottom: 2px solid #f38ba8;
 }
 
 #custom-playerctl:hover {
-  background-color: rgba(49, 50, 68, 0.8);
+    background-color: rgba(49, 50, 68, 0.8);
 }
 
 /* Subtle pill-like elevation effect for Material You look */
 #custom-cava-music, #custom-playerctl {
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Styling for scrolling effect in playerctl */
 @keyframes scroll {
-  from {
+from {
     margin-left: 0px;
-  }
-  to {
+}
+to {
     margin-left: -400px;
-  }
+}
 }
 
 #custom-playerctl span:hover {
-  animation: scroll 15s linear infinite;
+    animation: scroll 15s linear infinite;
+}
+
+/* Merged CPU and memory styling */
+#cpu, #memory, #custom-screenshot {
+  background-color: @surface0;
+  border-radius: 16px;
+  font-weight: bold;
+  padding: 0 14px;
+  margin: 4px 0px;
+  min-height: 26px;
+  transition: all 0.3s ease;
+}
+
+#cpu {
+  color: @blue;
+  margin-right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-right: 7px;
+}
+
+#memory {
+  color: @teal;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#custom-screenshot {
+  color: @flamingo;
+  margin-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left: 7px;
+}
+
+#custom-screenshot:hover {
+  background-color: @green;
+}
+
+/* Merged clock and weather styling */
+#clock, #custom-weather {
+  background-color: @surface0;
+  font-weight: bold;
+  border-radius: 16px;
+  margin: 4px 0px;
+}
+
+#clock {
+  color: @green;
+  padding: 0 12px 0 15px;
+  margin-right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 14px;
+}
+
+#custom-weather {
+  color: @mauve;
+  padding: 0 15px 0 5px;
+  margin-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+/* Merged pulseaudio and microphone styling */
+#pulseaudio, #pulseaudio.microphone {
+  background-color: @surface0;
+  font-weight: bold;
+  border-radius: 16px;
+  padding: 0 14px;
+  margin: 4px 0px;
+  min-height: 26px;
+  transition: all 0.3s ease;
+}
+
+#pulseaudio {
+  color: @lavender;
+  margin-right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-right: 7px;
+}
+
+#pulseaudio.microphone {
+  color: @pink;
+  margin-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left: 7px;
+}
+
+#pulseaudio.muted {
+  background-color: @surface2;
+  color: @red;
+}
+
+#pulseaudio.microphone.source-muted {
+  background-color: @surface2;
+  color: @red;
 }
 
 window#waybar {
@@ -133,7 +242,6 @@ window#waybar.hidden {
     border-radius: 16px;
     margin: 5px;
     padding: 0 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #custom-powermenu {
@@ -153,18 +261,6 @@ window#waybar.hidden {
     color: #cdd6f4;
 }
 
-#custom-weather {
-    padding: 5px 10px;
-    margin: 4px 3px;
-    background-color: @surface0;
-    color: @mauve;
-    border-radius: 20px;
-    min-width: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-
 #workspaces button {
     padding: 0 5px;
     margin: 4px 3px;
@@ -182,30 +278,18 @@ window#waybar.hidden {
     color: @crust;
     padding: 0 10px;
     min-width: 36px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     font-size: 18px;
     font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK", "Font Awesome 6 Free", sans-serif;
 }
 
 #workspaces button:hover {
     background: @sapphire;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 #workspaces button.urgent {
     background-color: @red;
     color: @crust;
     animation: blink 1s infinite alternate;
-}
-
-#clock {
-    background-color: @surface0;
-    color: @green;
-    font-weight: bold;
-    padding: 0 12px;
-    margin: 4px 0;
-    border-radius: 16px;
-    font-size: 14px;
 }
 
 #custom-media {
@@ -215,33 +299,12 @@ window#waybar.hidden {
     padding: 0 12px;
     margin: 4px 5px;
     min-width: 100px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-#custom-screenshot {
-    background-color: @surface0;
-    color: @flamingo;
-    border-radius: 16px;
-    padding: 0px 15px;
-    margin: 4px 3px;
-    min-height: 26px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-#custom-screenshot:hover {
-    background-color: @green;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#cpu,
-#memory,
 #temperature,
 #backlight,
 #battery,
 #network,
-#pulseaudio,
-#pulseaudio.microphone,
 #custom-notifications,
 #tray {
     background-color: @surface0;
@@ -251,12 +314,9 @@ window#waybar.hidden {
     padding: 0 14px;
     margin: 4px 4px;
     min-height: 26px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
-#cpu { color: @blue; }
-#memory { color: @teal; }
 #temperature { color: @green; }
 
 #temperature.critical {
@@ -291,29 +351,17 @@ window#waybar.hidden {
     color: @mantle;
 }
 
-#pulseaudio { color: @lavender; }
-#pulseaudio.muted {
-    background-color: @surface2;
-    color: @red;
-}
-
-#pulseaudio.microphone { color: @pink; }
-
-#pulseaudio.microphone.source-muted {
-    background-color: @surface2;
-    color: @red;
-}
-
 #custom-notifications { color: @mauve; }
 
-#cpu:hover,
-#memory:hover,
 #temperature:hover,
 #backlight:hover,
 #battery:hover,
 #network:hover,
 #pulseaudio:hover,
 #pulseaudio.microphone:hover,
-#custom-notifications:hover {
-    background-color: @surface2;
+#custom-notifications:hover,
+#cpu:hover,
+#memory:hover {
+    background-color: @green;
+    color: @crust;
 }

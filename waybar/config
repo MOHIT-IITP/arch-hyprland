@@ -2,13 +2,14 @@
     "layer": "top",
     "position": "top",
     "height": 46,
-    "spacing": 6,
+    "spacing": 0,
     "output": ["HDMI-A-1"],
     "margin-top": 5,
     "margin-left": 10,
     "margin-right": 10,
     
-    "modules-left": ["custom/playerctl","custom/cava-music", "clock", "custom/weather", "custom/media" ],
+    "modules-left": ["custom/cava-music","custom/playerctl",
+    "clock", "custom/weather", "custom/media" ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
     
@@ -23,6 +24,7 @@
             "alacritty": "",
             "code": "󰨞",
             "discord": "",
+            "vesktop": "",
             "telegram": "",
             "google-chrome": "",
             "thunar": "",
@@ -69,9 +71,9 @@
     "custom/screenshot": {
         "format": "󰹑",
         "tooltip": "Screenshot",
-        "on-click": "grim -g \"$(slurp)\" - | wl-copy && notify-send 'Screenshot' 'Copied to clipboard'",
-        "on-click-right": "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send 'Screenshot' 'Saved to Pictures/Screenshots'",
-        "on-click-middle": "grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send 'Screenshot' 'Fullscreen saved to Pictures/Screenshots'"
+        "on-click": "grim -g \"$(slurp)\" - | wl-copy && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Copied to clipboard'",
+        "on-click-right": "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Saved to Pictures/Screenshots'",
+        "on-click-middle": "grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Fullscreen saved to Pictures/Screenshots'"
     },
     "custom/media": {
         "format": "{icon} {}",
