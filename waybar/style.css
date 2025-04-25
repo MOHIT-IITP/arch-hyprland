@@ -1,0 +1,319 @@
+/* Catppuccin Mocha theme for Waybar with Material You aesthetics */
+
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color sapphire #74c7ec;
+@define-color sky #89dceb;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color maroon #eba0ac;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color flamingo #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    transition-duration: 0.3s;
+}
+
+/* Custom cava-music module styling */
+#custom-cava-music {
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+  font-size: 16px;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  min-width: 120px;
+  border-radius: 16px;
+  background-color:@surface0; 
+  color: @red; 
+  transition: all 0.3s ease;
+}
+
+#custom-cava-music:hover {
+  background-color: rgba(49, 50, 68, 0.8);
+}
+
+/* Custom playerctl module styling */
+#custom-playerctl {
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 3px 0px;
+  border-radius: 16px;
+  background-color:@surface0; 
+  min-width: 200px;
+  color: @lavender; /* Text from Catppuccin */
+  transition: all 0.3s ease;
+}
+
+#custom-playerctl.playing {
+  background-color: rgba(137, 180, 250, 0.2); /* Blue from Catppuccin */
+  border-bottom: 2px solid #89b4fa;
+}
+
+#custom-playerctl.paused {
+  background-color: rgba(249, 226, 175, 0.2); /* Yellow from Catppuccin */
+  border-bottom: 2px solid #f9e2af;
+  font-style: italic;
+}
+
+#custom-playerctl.stopped {
+  background-color: rgba(243, 139, 168, 0.2); /* Red from Catppuccin */
+  border-bottom: 2px solid #f38ba8;
+}
+
+#custom-playerctl:hover {
+  background-color: rgba(49, 50, 68, 0.8);
+}
+
+/* Subtle pill-like elevation effect for Material You look */
+#custom-cava-music, #custom-playerctl {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for scrolling effect in playerctl */
+@keyframes scroll {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -400px;
+  }
+}
+
+#custom-playerctl span:hover {
+  animation: scroll 15s linear infinite;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 36px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left, .modules-center, .modules-right {
+    margin: 4px 6px;
+}
+
+#workspaces {
+    background: @surface0;
+    border-radius: 16px;
+    margin: 5px;
+    padding: 0 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#custom-powermenu {
+    padding: 0 5px;
+    margin: 4px 6px;
+    background-color: @surface0;
+    color: @text;
+    border-radius: 16px;
+    min-width: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#custom-powermenu:hover {
+    background-color: rgba(139, 233, 253, 0.15);
+    color: #cdd6f4;
+}
+
+#custom-weather {
+    padding: 5px 10px;
+    margin: 4px 3px;
+    background-color: @surface0;
+    color: @mauve;
+    border-radius: 20px;
+    min-width: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 4px 3px;
+    background-color: transparent;
+    color: @yellow;
+    border-radius: 12px;
+    min-width: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button.active {
+    background: linear-gradient(90deg, rgba(250, 156, 255, 1) 0%, rgba(161, 186, 255, 1) 100%);
+    color: @crust;
+    padding: 0 10px;
+    min-width: 36px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK", "Font Awesome 6 Free", sans-serif;
+}
+
+#workspaces button:hover {
+    background: @sapphire;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @crust;
+    animation: blink 1s infinite alternate;
+}
+
+#clock {
+    background-color: @surface0;
+    color: @green;
+    font-weight: bold;
+    padding: 0 12px;
+    margin: 4px 0;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+#custom-media {
+    background-color: @surface0;
+    color: @rosewater;
+    border-radius: 16px;
+    padding: 0 12px;
+    margin: 4px 5px;
+    min-width: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#custom-screenshot {
+    background-color: @surface0;
+    color: @flamingo;
+    border-radius: 16px;
+    padding: 0px 15px;
+    margin: 4px 3px;
+    min-height: 26px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#custom-screenshot:hover {
+    background-color: @green;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#network,
+#pulseaudio,
+#pulseaudio.microphone,
+#custom-notifications,
+#tray {
+    background-color: @surface0;
+    color: @text;
+    border-radius: 16px;
+    font-weight: bold;
+    padding: 0 14px;
+    margin: 4px 4px;
+    min-height: 26px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#cpu { color: @blue; }
+#memory { color: @teal; }
+#temperature { color: @green; }
+
+#temperature.critical {
+    background-color: @red;
+    color: @mantle;
+    animation: blink 1s infinite alternate;
+}
+
+#backlight { color: @yellow; }
+#battery { color: @peach; }
+
+#battery.charging {
+    background-color: @green;
+    color: @mantle;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @yellow;
+    color: @mantle;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @mantle;
+    animation: blink 0.5s infinite alternate;
+}
+
+#network { color: @sapphire; }
+
+#network.disconnected {
+    background-color: @red;
+    color: @mantle;
+}
+
+#pulseaudio { color: @lavender; }
+#pulseaudio.muted {
+    background-color: @surface2;
+    color: @red;
+}
+
+#pulseaudio.microphone { color: @pink; }
+
+#pulseaudio.microphone.source-muted {
+    background-color: @surface2;
+    color: @red;
+}
+
+#custom-notifications { color: @mauve; }
+
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#custom-notifications:hover {
+    background-color: @surface2;
+}
