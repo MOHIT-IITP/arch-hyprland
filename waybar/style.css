@@ -1,8 +1,3 @@
-
-
-
-
-
 /* Catppuccin Mocha theme for Waybar with Material You aesthetics */
 
 @define-color base #1e1e2e;
@@ -52,7 +47,7 @@
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
     font-size: 16px;
     padding: 0px 10px;
-    margin: 5px 5px;
+    margin: 7px 7px;
     min-width: 120px;
     border-radius: 16px;
     background-color:@surface0; 
@@ -67,10 +62,10 @@
 /* Custom playerctl module styling */
 #custom-playerctl {
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
-    padding: 0px 5px;
-    margin: 3px 0px;
+    padding: 3px 3px;
+    margin: 7px 5px;
     border-radius: 16px;
     background-color:@surface0; 
     min-width: 200px;
@@ -99,9 +94,9 @@
 }
 
 /* Subtle pill-like elevation effect for Material You look */
-#custom-cava-music, #custom-playerctl {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
+/* #custom-cava-music, #custom-playerctl { */
+/*     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); */
+/* } */
 
 /* Styling for scrolling effect in playerctl */
 @keyframes scroll {
@@ -123,7 +118,7 @@ to {
   border-radius: 16px;
   font-weight: bold;
   padding: 0 14px;
-  margin: 4px 0px;
+  margin: 7px 0px;
   min-height: 26px;
   transition: all 0.3s ease;
 }
@@ -162,24 +157,19 @@ to {
   background-color: @surface0;
   font-weight: bold;
   border-radius: 16px;
-  margin: 4px 0px;
+  margin: 7px 0px;
 }
 
 #clock {
   color: @green;
-  padding: 0 12px 0 15px;
-  margin-right: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  padding: 0 15px;
+  margin-right: 3px;
   font-size: 14px;
 }
 
 #custom-weather {
   color: @mauve;
-  padding: 0 15px 0 5px;
-  margin-left: 0px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  padding: 0 15px; 
   font-size: 14px;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -190,7 +180,7 @@ to {
   font-weight: bold;
   border-radius: 16px;
   padding: 0 14px;
-  margin: 4px 0px;
+  margin: 7px 0px;
   min-height: 26px;
   transition: all 0.3s ease;
 }
@@ -234,13 +224,13 @@ window#waybar.hidden {
 }
 
 .modules-left, .modules-center, .modules-right {
-    margin: 4px 6px;
+    margin: 7px 6px;
 }
 
 #workspaces {
     background: @surface0;
     border-radius: 16px;
-    margin: 5px;
+    margin: 7px;
     padding: 0 5px;
 }
 
@@ -312,7 +302,7 @@ window#waybar.hidden {
     border-radius: 16px;
     font-weight: bold;
     padding: 0 14px;
-    margin: 4px 4px;
+    margin: 7px 4px;
     min-height: 26px;
     transition: all 0.3s ease;
 }
