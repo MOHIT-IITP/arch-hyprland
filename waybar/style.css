@@ -37,9 +37,8 @@
     font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
     font-size: 14px;
     min-height: 0;
-    margin: 0;
+    margin: 0px;
     padding: 0;
-    transition-duration: 0.3s;
 }
 
 /* Custom cava-music module styling */
@@ -47,7 +46,7 @@
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
     font-size: 16px;
     padding: 0px 10px;
-    margin: 7px 7px;
+    margin: 0px 0px;
     min-width: 120px;
     border-radius: 16px;
     background-color:@surface0; 
@@ -60,8 +59,8 @@
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
     font-size: 12px;
     font-weight: bold;
-    padding: 3px 3px;
-    margin: 7px 5px;
+    padding: 3px 9px;
+    margin: 0px 5px;
     border-radius: 16px;
     background-color:@surface0; 
     min-width: 200px;
@@ -105,7 +104,7 @@ to {
   border-radius: 16px;
   font-weight: bold;
   padding: 0 14px;
-  margin: 7px 0px;
+  margin: 0px 0px;
   min-height: 26px;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -140,25 +139,24 @@ to {
   background-color: @surface0;
   font-weight: bold;
   border-radius: 16px;
-  margin: 7px 0px;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+  margin: 0px 0px;
+  transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.68);
 }
 
 #clock {
-  color: @green;
-  padding: 0 15px;
+  color: @text;
+  padding: 0 9px;
   margin-right: 3px;
   font-size: 14px;
 }
 
 #custom-weather {
   color: @mauve;
-  padding: 0 15px; 
+  padding: 0 9px; 
   font-size: 14px;
 }
 
 
-/* Hover effect same as workspace hover */
 #pulseaudio:hover,
 #pulseaudio.microphone:hover {
     background-color: @sapphire;
@@ -169,8 +167,8 @@ to {
   background-color: @surface0;
   font-weight: bold;
   border-radius: 16px;
-  padding: 0 14px;
-  margin: 7px 0px;
+  padding: 0 10px;
+  margin: 0px 0px;
   min-height: 26px;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -180,7 +178,7 @@ to {
   margin-right: 0px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  padding-right: 7px;
+  padding-right: 10px;
 }
 
 #pulseaudio.microphone {
@@ -188,7 +186,7 @@ to {
   margin-left: 0px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  padding-left: 7px;
+  padding-left: 10px;
 }
 
 #pulseaudio.muted {
@@ -214,12 +212,12 @@ window#waybar.hidden {
 }
 
 .modules-left, .modules-center, .modules-right {
-    margin: 7px 6px;
+    margin: 0px 6px;
 }
 
 #custom-powermenu {
-    padding: 0 5px;
-    margin: 4px 6px;
+    padding: 0 9px;
+    margin: 0px 6px;
     background-color: @surface0;
     color: @text;
     border-radius: 16px;
@@ -232,8 +230,8 @@ window#waybar.hidden {
 #workspaces {
     background: @surface0;
     border-radius: 16px;
-    margin: 7px;
-    padding: 0 5px;
+    margin: 0px;
+    padding: 0 2px;
 }
 
 #workspaces button {
@@ -245,11 +243,11 @@ window#waybar.hidden {
     min-width: 30px;
     font-weight: bold;
     font-size: 16px;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+    transition:  0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
 
 #workspaces button.active {
-    background: linear-gradient(90deg, rgba(250, 156, 255, 1) 0%, rgba(161, 186, 255, 1) 100%);
+    background:@lavender;
     color: @crust;
     padding: 0 10px;
     min-width: 36px;
@@ -259,6 +257,7 @@ window#waybar.hidden {
 
 #workspaces button:hover {
     background: @sapphire;
+    color: @crust;
 }
 
 #workspaces button.urgent {
@@ -272,7 +271,7 @@ window#waybar.hidden {
     color: @rosewater;
     border-radius: 16px;
     padding: 0 12px;
-    margin: 4px 5px;
+    margin: 4px 2px;
     min-width: 100px;
 }
 
@@ -286,8 +285,8 @@ window#waybar.hidden {
     color: @text;
     border-radius: 16px;
     font-weight: bold;
-    padding: 0 14px;
-    margin: 7px 4px;
+    padding: 0 10px;
+    margin: 0px 4px;
     min-height: 26px;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -327,25 +326,6 @@ window#waybar.hidden {
 }
 
 #custom-notifications { color: @mauve; }
-
-/* Material You hover effects for all modules */
-#pulseaudio:hover,
-#pulseaudio.microphone:hover,
-#temperature:hover,
-#backlight:hover,
-#battery:hover,
-#network:hover,
-#custom-notifications:hover,
-#cpu:hover,
-#memory:hover,
-#custom-screenshot:hover,
-#clock:hover,
-#custom-weather:hover {
-    background: linear-gradient(90deg, rgba(250, 156, 255, 0.7) 0%, rgba(161, 186, 255, 0.7) 100%);
-    color: @crust;
-}
-
-/* Media controls hover effects with Material You styling */
 #custom-cava-music:hover,
 #custom-playerctl:hover {
     background: linear-gradient(90deg, rgba(243, 139, 168, 0.5) 0%, rgba(180, 190, 254, 0.5) 100%);
@@ -371,7 +351,6 @@ window#waybar.hidden {
     }
 }
 
-
 #pulseaudio:hover,
 #pulseaudio.microphone:hover,
 #temperature:hover,
@@ -387,8 +366,6 @@ window#waybar.hidden {
 #custom-cava-music:hover,
 #custom-playerctl:hover,
 #custom-powermenu:hover {
-    /* animation: scale 0.3s ease forwards; */
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(90deg, rgba(250, 156, 255, 0.7) 0%, rgba(161, 186, 255, 0.7) 100%);
-    color: @text;
+    background: @mauve;
+    color: @crust;
 }

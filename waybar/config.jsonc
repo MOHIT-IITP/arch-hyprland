@@ -1,14 +1,15 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 46,
+    "height": 10,
     "spacing": 0,
     "output": ["HDMI-A-1"],
-    "margin-top": 0,
+    "margin-top": 5,
+    "margin-bottom": 3,
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["custom/cava-music", "custom/playerctl", "clock", "custom/weather", "custom/media"],
+    "modules-left": ["custom/cava-music", "custom/playerctl", "clock", "custom/weather"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
 
@@ -74,35 +75,21 @@
         "on-click-right": "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Saved to Pictures/Screenshots'",
         "on-click-middle": "grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Fullscreen saved to Pictures/Screenshots'"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "format-icons": {
-            "Playing": "󰐊",
-            "Paused": "󰏤"
-        },
-        "escape": true,
-        "interval": 1,
-        "max-length": 40,
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl next",
-        "smooth-scrolling-threshold": 10,
-        "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
-    },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "󰥔 {:%I:%M %p}",
         "format-alt": "{:%A, %B %d, %Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60
     },
 
     "cpu": {
-        "format": "{usage}% 󰘚",
+        "format": "󰘚 {usage}% ",
         "tooltip": true,
         "interval": 2
     },
 
     "memory": {
-        "format": "{}% 󰍛",
+        "format": "󰍛 {}% ",
         "interval": 2
     },
 
@@ -125,21 +112,24 @@
         "exec": "$HOME/.config/hypr/scripts/WaybarCava.sh",
         "format": "{}"
     },
+
     "custom/playerctl": {
-        "format": "<span>{}</span>",
+        "format": "{}",
+        "escape": true,
         "return-type": "json",
-        "max-length": 25,
-        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click-middle": "playerctl play-pause",
-        "on-click": "playerctl previous",
-        "on-click-right": "playerctl next",
-        "scroll-step": 5.0,
+        "max-length": 40,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
         "smooth-scrolling-threshold": 1
     },
+
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} 󰂯",
-        "format-bluetooth-muted": "󰂲 {icon}",
+        "format-bluetooth-muted": "󰂲 󰖁 {icon}",
         "format-muted": "󰖁",
         "format-icons": {
             "headphone": "󰋋",
