@@ -7,12 +7,11 @@
     "margin-top": 0,
     "margin-left": 10,
     "margin-right": 10,
-    
-    "modules-left": ["custom/cava-music","custom/playerctl",
-    "clock", "custom/weather", "custom/media" ],
+
+    "modules-left": ["custom/cava-music", "custom/playerctl", "clock", "custom/weather", "custom/media"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
-    
+
     "hyprland/workspaces": {
         "format": "{icon} {windows}",
         "format-window-separator": " ",
@@ -59,7 +58,7 @@
         "all-outputs": true,
         "sort-by-number": true
     },
-    
+
     "custom/weather": {
         "format": "{} ",
         "tooltip": true,
@@ -95,18 +94,18 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60
     },
-    
+
     "cpu": {
         "format": "{usage}% 󰘚",
         "tooltip": true,
         "interval": 2
     },
-    
+
     "memory": {
         "format": "{}% 󰍛",
         "interval": 2
     },
-    
+
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) 󰖩",
         "format-ethernet": "󰈀",
@@ -117,7 +116,7 @@
         "on-click-right": "nm-connection-editor"
     },
     "custom/powermenu": {
-        "format": "",  
+        "format": "",
         "tooltip": false,
         "on-click": "~/.config/waybar/scripts/powermenu.sh",
         "interval": 0
@@ -135,7 +134,7 @@
         "on-click": "playerctl previous",
         "on-click-right": "playerctl next",
         "scroll-step": 5.0,
-        "smooth-scrolling-threshold": 1,
+        "smooth-scrolling-threshold": 1
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -154,7 +153,7 @@
         "on-click": "pavucontrol",
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
-    
+
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": "󰍬 {volume}%",
@@ -165,7 +164,7 @@
         "tooltip-format": "{format_source}",
         "scroll-step": 5
     },
-    
+
     "custom/notifications": {
         "format": "{icon}",
         "format-icons": {
@@ -185,7 +184,7 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    
+
     "tray": {
         "icon-size": 18,
         "spacing": 8

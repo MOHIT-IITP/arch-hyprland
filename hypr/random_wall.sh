@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to wallpapers directory
-WALLPAPER_DIR=~/pix/wall
+WALLPAPER_DIR=~/Pictures/wallpapers
 
 # Get a random wallpaper from the directory
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) | shuf -n 1)
