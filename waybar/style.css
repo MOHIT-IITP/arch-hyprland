@@ -247,9 +247,9 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    background:@lavender;
+    background:@yellow;
     color: @crust;
-    padding: 0 10px;
+    padding: 0 10px 0 2px;
     min-width: 36px;
     font-size: 18px;
     font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK", "Font Awesome 6 Free", sans-serif;
