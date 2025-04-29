@@ -113,14 +113,15 @@
     "custom/playerctl": {
         "format": "{}",
         "escape": true,
-        "return-type": "json",
-        "max-length": 40,
-        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+        "return-type": "json", 
+        "max-length": 5,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl stop",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous",
-        "smooth-scrolling-threshold": 1
+        "smooth-scrolling-threshold": 1,
+        "tooltip": false
     },
 
     "pulseaudio": {

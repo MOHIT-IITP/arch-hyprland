@@ -7,7 +7,6 @@ import argparse
 import logging
 import sys
 import signal
-import gi
 import json
 import os
 from typing import List
@@ -66,17 +65,27 @@ class PlayerManager:
 
     def write_output(self, text, player):
         logger.debug(f"Writing output: {text}")
+        
+        # If text is empty, don't write anything
+        if not text.strip():
+            self.clear_output()
+            return
 
-        output = {"text": text,
-                  "class": "custom-" + player.props.player_name,
-                  "alt": player.props.player_name}
+        status_class = player.props.status.lower() if player.props.status else "stopped"
+        
+        output = {
+            "text": text,
+            "class": f"custom-{player.props.player_name} {status_class}",
+            "alt": player.props.player_name
+        }
 
         sys.stdout.write(json.dumps(output) + "\n")
         sys.stdout.flush()
 
     def clear_output(self):
-        sys.stdout.write("\n")
-        sys.stdout.flush()
+        # Return no text to hide the module completely
+        # The difference is we're not sending any output at all
+        sys.exit(0)
 
     def on_playback_status_changed(self, player, status, _=None):
         logger.debug(f"Playback status changed for player {player.props.player_name}: {status}")
@@ -119,20 +128,28 @@ class PlayerManager:
             track_info = "Advertisement"
         elif artist is not None and title is not None:
             track_info = f"{artist} - {title}"
-        else:
+        elif title is not None:
             track_info = title
 
         if track_info:
             if player.props.status == "Playing":
-                track_info = "   " + track_info
+                track_info = "   " + track_info
             else:
-                track_info = "   " + track_info
-        # only print output if no other player is playing
+                track_info = "   " + track_info
+        else:
+            # If no track info, don't show anything
+            self.clear_output()
+            return
+        
+        # Only show output if there's actual track info and it's the most important player
         current_playing = self.get_first_playing_player()
-        if current_playing is None or current_playing.props.player_name == player.props.player_name:
+        if track_info and (current_playing is None or current_playing.props.player_name == player.props.player_name):
             self.write_output(track_info, player)
         else:
-            logger.debug(f"Other player {current_playing.props.player_name} is playing, skipping")
+            # If we have no track info or another player is more important, don't show anything
+            if current_playing is None:
+                self.clear_output()
+            logger.debug(f"No track info or other player {current_playing.props.player_name if current_playing else 'None'} is playing, skipping")
 
     def on_player_appeared(self, _, player):
         logger.info(f"Player has appeared: {player.name}")
@@ -156,7 +173,8 @@ def parse_arguments():
     # Increase verbosity with every occurrence of -v
     parser.add_argument("-v", "--verbose", action="count", default=0)
 
-    parser.add_argument("-x", "--exclude", "- Comma-separated list of excluded player")
+    # Fixed syntax error in the original
+    parser.add_argument("-x", "--exclude", help="Comma-separated list of excluded player")
 
     # Define for which player we"re listening
     parser.add_argument("--player")
@@ -185,6 +203,12 @@ def main():
         logger.info(f"Filtering for player: {arguments.player}")
     if arguments.exclude:
         logger.info(f"Exclude player {arguments.exclude}")
+
+    # Check if any player is available
+    manager = Playerctl.PlayerManager()
+    if not manager.props.player_names:
+        # No players found, exit silently
+        sys.exit(0)
 
     player = PlayerManager(arguments.player, arguments.exclude)
     player.run()
