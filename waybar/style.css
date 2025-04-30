@@ -1,36 +1,30 @@
-/* Catppuccin Mocha theme for Waybar with Material You aesthetics */
-
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
-
-@define-color text #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color subtext1 #bac2de;
-
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color surface2 #585b70;
-
-@define-color overlay0 #6c7086;
-@define-color overlay1 #7f849c;
-@define-color overlay2 #9399b2;
-
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color sapphire #74c7ec;
-@define-color sky #89dceb;
-@define-color teal #94e2d5;
-@define-color green #a6e3a1;
-@define-color yellow #f9e2af;
-@define-color peach #fab387;
-@define-color maroon #eba0ac;
-@define-color red #f38ba8;
-@define-color mauve #cba6f7;
-@define-color pink #f5c2e7;
-@define-color flamingo #f2cdcd;
-@define-color rosewater #f5e0dc;
-
+/* Monochrome theme for Waybar with Material You aesthetics */
+@define-color base #121212;
+@define-color mantle #0d0d0d;
+@define-color crust #070707;
+@define-color text #e0e0e0;
+@define-color subtext0 #b0b0b0;
+@define-color subtext1 #c8c8c8;
+@define-color surface0 #303030;
+@define-color surface1 #424242;
+@define-color surface2 #5a5a5a;
+@define-color overlay0 #707070;
+@define-color overlay1 #868686;
+@define-color overlay2 #a0a0a0;
+@define-color blue #c0c0c0;
+@define-color lavender #d8d8d8;
+@define-color sapphire #b8b8b8;
+@define-color sky #d0d0d0;
+@define-color teal #c8c8c8;
+@define-color green #b0b0b0;
+@define-color yellow #e8e8e8;
+@define-color peach #d0d0d0;
+@define-color maroon #c0c0c0;
+@define-color red #e0e0e0;
+@define-color mauve #d0d0d0;
+@define-color pink #e0e0e0;
+@define-color flamingo #d8d8d8;
+@define-color rosewater #e8e8e8;
 * {
     border: none;
     border-radius: 0;
@@ -40,7 +34,6 @@
     margin: 0px;
     padding: 0;
 }
-
 /* Custom cava-music module styling */
 #custom-cava-music {
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
@@ -53,37 +46,39 @@
     color: @red; 
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 /* Custom playerctl module styling */
 #custom-playerctl {
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
     font-size: 12px;
     font-weight: bold;
-    padding: 3px 9px;
-    margin: 0px 5px;
     border-radius: 16px;
     background-color: @surface0; 
-    min-width: 200px;
+    margin: 0px 5px;
+    min-width: 150px;
+    padding: 3px 9px;
     color: @lavender; /* Text from Catppuccin */
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #custom-playerctl.playing {
-    background-color: rgba(137, 180, 250, 0.2); /* Blue from Catppuccin */
-    border-bottom: 2px solid #89b4fa;
+    background-color: rgba(192, 192, 192, 0.2); /* Monochrome blue */
+    border-bottom: 2px solid #c0c0c0;
+    min-width: 100px;
+    padding: 3px 9px;
+    margin: 0px 5px;
 }
-
 #custom-playerctl.paused {
-    background-color: rgba(249, 226, 175, 0.2); /* Yellow from Catppuccin */
-    border-bottom: 2px solid #f9e2af;
+    background-color: rgba(232, 232, 232, 0.2); /* Monochrome yellow */
+    border-bottom: 2px solid #e8e8e8;
     font-style: italic;
+    min-width: 100px;
+    padding: 3px 9px;
+    margin: 0px 5px;
 }
-
 #custom-playerctl.stopped {
-    background-color: rgba(243, 139, 168, 0.2); /* Red from Catppuccin */
-    border-bottom: 2px solid #f38ba8;
+    background-color: rgba(224, 224, 224, 0.2); /* Monochrome red */
+    min-width: 0px;
+    border-bottom: 2px solid #e0e0e0;
 }
-
 /* Styling for scrolling effect in playerctl */
 @keyframes scroll {
 from {
@@ -93,11 +88,9 @@ to {
     margin-left: -400px;
 }
 }
-
 #custom-playerctl span:hover {
     animation: scroll 15s linear infinite;
 }
-
 /* Merged CPU and memory styling */
 #cpu, #memory, #custom-screenshot {
   background-color: @surface0;
@@ -108,7 +101,6 @@ to {
   min-height: 26px;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #cpu {
   color: @blue;
   margin-right: 0px;
@@ -116,7 +108,6 @@ to {
   border-bottom-right-radius: 0px;
   padding-right: 7px;
 }
-
 #memory {
   color: @teal;
   margin-left: 0px;
@@ -125,7 +116,6 @@ to {
   padding-left: 7px;
   padding-right: 7px;
 }
-
 #custom-screenshot {
   color: @flamingo;
   margin-left: 0px;
@@ -133,7 +123,6 @@ to {
   border-bottom-left-radius: 0px;
   padding-left: 7px;
 }
-
 /* Merged clock and weather styling */
 #clock, #custom-weather {
   background-color: @surface0;
@@ -142,27 +131,22 @@ to {
   margin: 0px 0px;
   transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #clock {
   color: @text;
   padding: 0 9px;
   margin-right: 3px;
   font-size: 14px;
 }
-
 #custom-weather {
   color: @mauve;
   padding: 0 9px; 
   font-size: 14px;
 }
-
-
 #pulseaudio:hover,
 #pulseaudio.microphone:hover {
     background-color: @sapphire;
     color: @crust;
 }
-
 #pulseaudio, #pulseaudio.microphone {
   background-color: @surface0;
   font-weight: bold;
@@ -172,7 +156,6 @@ to {
   min-height: 26px;
   transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #pulseaudio {
   color: @lavender;
   margin-right: 0px;
@@ -180,7 +163,6 @@ to {
   border-bottom-right-radius: 0px;
   padding-right: 10px;
 }
-
 #pulseaudio.microphone {
   color: @pink;
   margin-left: 0px;
@@ -188,17 +170,14 @@ to {
   border-bottom-left-radius: 0px;
   padding-left: 10px;
 }
-
 #pulseaudio.muted {
   background-color: @surface2;
   color: @red;
 }
-
 #pulseaudio.microphone.source-muted {
   background-color: @red;
   color: @yellow;
 }
-
 window#waybar {
     background-color: transparent;
     color: @text;
@@ -206,15 +185,12 @@ window#waybar {
     transition-duration: 0.5s;
     border-radius: 36px;
 }
-
 window#waybar.hidden {
     opacity: 0.2;
 }
-
 .modules-left, .modules-center, .modules-right {
     margin: 0px 6px;
 }
-
 #custom-powermenu {
     padding: 0 9px;
     margin: 0px 6px;
@@ -226,14 +202,12 @@ window#waybar.hidden {
     font-size: 16px;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #workspaces {
     background: @surface0;
     border-radius: 16px;
     margin: 0px;
     padding: 0 2px;
 }
-
 #workspaces button {
     padding: 0 4px;
     margin: 4px 3px;
@@ -245,7 +219,6 @@ window#waybar.hidden {
     font-size: 16px;
     transition:  0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #workspaces button.active {
     background:@yellow;
     color: @crust;
@@ -254,18 +227,15 @@ window#waybar.hidden {
     font-size: 18px;
     font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK", "Font Awesome 6 Free", sans-serif;
 }
-
 #workspaces button:hover {
     background: @sapphire;
     color: @crust;
 }
-
 #workspaces button.urgent {
     background-color: @red;
     color: @crust;
     animation: blink 1s infinite alternate;
 }
-
 #custom-media {
     background-color: @surface0;
     color: @rosewater;
@@ -274,7 +244,6 @@ window#waybar.hidden {
     margin: 4px 2px;
     min-width: 100px;
 }
-
 #temperature,
 #backlight,
 #battery,
@@ -290,54 +259,43 @@ window#waybar.hidden {
     min-height: 26px;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-
 #temperature { color: @green; }
-
 #temperature.critical {
     background-color: @red;
     color: @mantle;
     animation: blink 1s infinite alternate;
 }
-
 #backlight { color: @yellow; }
 #battery { color: @peach; }
-
 #battery.charging {
     background-color: @green;
     color: @mantle;
 }
-
 #battery.warning:not(.charging) {
     background-color: @yellow;
     color: @mantle;
 }
-
 #battery.critical:not(.charging) {
     background-color: @red;
     color: @mantle;
     animation: blink 0.5s infinite alternate;
 }
-
 #network { color: @sapphire; }
-
 #network.disconnected {
     background-color: @red;
     color: @mantle;
 }
-
 #custom-notifications { color: @mauve; }
 #custom-cava-music:hover,
 #custom-playerctl:hover {
-    background: linear-gradient(90deg, rgba(243, 139, 168, 0.5) 0%, rgba(180, 190, 254, 0.5) 100%);
+    background: linear-gradient(90deg, rgba(224, 224, 224, 0.5) 0%, rgba(216, 216, 216, 0.5) 100%);
     color: @crust;
 }
-
 /* Power menu special hover effect */
 #custom-powermenu:hover {
-    background: linear-gradient(90deg, rgba(243, 139, 168, 0.8) 0%, rgba(250, 179, 135, 0.8) 100%);
+    background: linear-gradient(90deg, rgba(224, 224, 224, 0.8) 0%, rgba(208, 208, 208, 0.8) 100%);
     color: @crust;
 }
-
 /* Define blink animation */
 @keyframes blink {
     to {
@@ -350,7 +308,6 @@ window#waybar.hidden {
         color: @base;
     }
 }
-
 #pulseaudio:hover,
 #pulseaudio.microphone:hover,
 #temperature:hover,

@@ -133,9 +133,9 @@ class PlayerManager:
 
         if track_info:
             if player.props.status == "Playing":
-                track_info = "   " + track_info
+                track_info = " " + track_info
             else:
-                track_info = "   " + track_info
+                track_info = " " + track_info
         else:
             # If no track info, don't show anything
             self.clear_output()
