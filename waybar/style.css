@@ -1,313 +1,198 @@
-/* Monochrome theme for Waybar with Material You aesthetics */
-@define-color base #121212;
-@define-color mantle #0d0d0d;
-@define-color crust #070707;
-@define-color text #e0e0e0;
-@define-color subtext0 #b0b0b0;
-@define-color subtext1 #c8c8c8;
-@define-color surface0 #303030;
-@define-color surface1 #424242;
-@define-color surface2 #5a5a5a;
-@define-color overlay0 #707070;
-@define-color overlay1 #868686;
-@define-color overlay2 #a0a0a0;
-@define-color blue #c0c0c0;
-@define-color lavender #d8d8d8;
-@define-color sapphire #b8b8b8;
-@define-color sky #d0d0d0;
-@define-color teal #c8c8c8;
-@define-color green #b0b0b0;
-@define-color yellow #e8e8e8;
-@define-color peach #d0d0d0;
-@define-color maroon #c0c0c0;
-@define-color red #e0e0e0;
-@define-color mauve #d0d0d0;
-@define-color pink #e0e0e0;
-@define-color flamingo #d8d8d8;
-@define-color rosewater #e8e8e8;
+@import url("/home/mohiitp/.config/waybar/colors.css");
+
+
 * {
     border: none;
     border-radius: 0;
-    font-family: "CommitMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
     font-size: 14px;
     min-height: 0;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
-/* Custom cava-music module styling */
-#custom-cava-music {
-    font-family: "JetBrainsMono Nerd Font Propo", monospace;
-    font-size: 16px;
-    padding: 0px 10px;
-    margin: 0px 0px;
-    min-width: 120px;
-    border-radius: 16px;
-    background-color: rgba(48, 48, 48, 0.7);
-    color: @red; 
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-/* Custom playerctl module styling */
-#custom-playerctl {
-    font-family: "JetBrainsMono Nerd Font Propo", monospace;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 16px;
-    background-color: rgba(48, 48, 48, 0.7);
-    margin: 0px 5px;
-    min-width: 150px;
-    padding: 3px 9px;
-    color: @lavender;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#custom-playerctl.playing {
-    background-color: rgba(192, 192, 192, 0.2);
-    border-bottom: 2px solid #c0c0c0;
-    min-width: 100px;
-    padding: 3px 9px;
-    margin: 0px 5px;
-}
-#custom-playerctl.paused {
-    background-color: rgba(232, 232, 232, 0.2);
-    border-bottom: 2px solid #e8e8e8;
-    font-style: italic;
-    min-width: 100px;
-    padding: 3px 9px;
-    margin: 0px 5px;
-}
-#custom-playerctl.stopped {
-    background-color: rgba(224, 224, 224, 0.2);
-    min-width: 0px;
-    border-bottom: 2px solid #e0e0e0;
-}
-/* Styling for scrolling effect in playerctl */
-@keyframes scroll {
-from {
-    margin-left: 0px;
-}
-to {
-    margin-left: -400px;
-}
-}
-#custom-playerctl span:hover {
-    animation: scroll 15s linear infinite;
-}
-/* Merged CPU and memory styling */
-#cpu, #memory, #custom-screenshot {
-  background-color: rgba(48, 48, 48, 0.7);
-  border-radius: 16px;
-  font-weight: bold;
-  padding: 0 14px;
-  margin: 0px 0px;
-  min-height: 26px;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#cpu {
-  color: @blue;
-  margin-right: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  padding-right: 7px;
-}
-#memory {
-  color: @teal;
-  margin-left: 0px;
-  margin-right: 0px;
-  border-radius: 0px;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-#custom-screenshot {
-  color: @flamingo;
-  margin-left: 0px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  padding-left: 7px;
-}
-/* Merged clock and weather styling */
-#clock, #custom-weather {
-  background-color: rgba(48, 48, 48, 0.7);
-  font-weight: bold;
-  border-radius: 16px;
-  margin: 0px 0px;
-  transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#clock {
-  color: @text;
-  padding: 0 9px;
-  margin-right: 3px;
-  font-size: 14px;
-}
-#custom-weather {
-  color: @mauve;
-  padding: 0 9px; 
-  font-size: 14px;
-}
-#pulseaudio:hover,
-#pulseaudio.microphone:hover {
-    background-color: @sapphire;
-    color: @crust;
-}
-#pulseaudio, #pulseaudio.microphone {
-  background-color: rgba(48, 48, 48, 0.7);
-  font-weight: bold;
-  border-radius: 16px;
-  padding: 0 10px;
-  margin: 0px 0px;
-  min-height: 26px;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#pulseaudio {
-  color: @lavender;
-  margin-right: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  padding-right: 10px;
-}
-#pulseaudio.microphone {
-  color: @pink;
-  margin-left: 0px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  padding-left: 10px;
-}
-#pulseaudio.muted {
-  background-color: rgba(90, 90, 90, 0.7);
-  color: @red;
-}
-#pulseaudio.microphone.source-muted {
-  background-color: rgba(224, 224, 224, 0.7);
-  color: @yellow;
-}
+/* END: Base Reset */
+
+/* START: Waybar Window */
 window#waybar {
     background-color: transparent;
-    color: @text;
-    transition-property: background-color;
-    transition-duration: 0.5s;
+    color: @on_surface;
     border-radius: 36px;
+    transition-duration: 0.5s;
+    transition-property: background-color;
+    padding: 2px 0;
+    min-height: 28px;
 }
+
 window#waybar.hidden {
     opacity: 0.2;
 }
-.modules-left, .modules-center, .modules-right {
-    margin: 0px 6px;
-}
-#custom-powermenu {
-    padding: 0 9px;
-    margin: 0px 6px;
-    background-color: rgba(48, 48, 48, 0.7);
-    color: @text;
-    border-radius: 16px;
-    min-width: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#workspaces {
-    background: rgba(48, 48, 48, 0.7);
-    border-radius: 16px;
-    margin: 0px;
-    padding: 0 2px;
-}
-#workspaces button {
-    padding: 0 10px 0 4px;
-    margin: 4px 3px;
-    background-color: transparent;
-    color: @yellow;
-    border-radius: 12px;
-    min-width: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    transition:  0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-#workspaces button.active {
-    background:@yellow;
-    color: @crust;
-    padding: 0 10px 0 2px;
-    min-width: 36px;
-    font-size: 18px;
-    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK", "Font Awesome 6 Free", sans-serif;
-}
-#workspaces button:hover {
-    background: @sapphire;
-    color: @crust;
-}
-#workspaces button.urgent {
-    background-color: @red;
-    color: @crust;
-    animation: blink 1s infinite alternate;
-}
-#custom-media {
-    background-color: rgba(48, 48, 48, 0.7);
-    color: @rosewater;
-    border-radius: 16px;
-    padding: 0 12px;
-    margin: 4px 2px;
-    min-width: 100px;
-}
+/* END: Waybar Window */
+
+/* START: Module Containers */
+.modules-left, .modules-center { margin: 0 6px; }
+.modules-right { margin-right: 12px; }
+
+#custom-cava-music,
+#custom-playerctl,
+#cpu,
+#memory,
+#custom-screenshot,
+#clock,
+#custom-weather,
+#pulseaudio,
+#pulseaudio.microphone,
+#custom-powermenu,
+#custom-media,
 #temperature,
 #backlight,
 #battery,
 #network,
 #custom-notifications,
+#bluetooth,
 #tray {
-    background-color: rgba(48, 48, 48, 0.7);
-    color: @text;
+    background-color: @surface_container;
     border-radius: 16px;
     font-weight: bold;
-    padding: 0 10px;
-    margin: 0px 4px;
-    min-height: 26px;
+    font-size: 12px;
+    padding: 0px 12px;
+    margin: 0 2px;
+    min-height: 20px;
+    color: @on_surface;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
-#temperature { color: @green; }
+/* END: Module Containers */
+
+/* START: Playerctl States */
+#custom-playerctl.playing {
+    background-color: @primary_container;
+    border-bottom: 2px solid @primary;
+    color: @on_primary_container;
+}
+
+#custom-playerctl.paused {
+    background-color: @secondary_container;
+    border-bottom: 2px solid @secondary;
+    font-style: italic;
+    color: @on_secondary_container;
+}
+
+#custom-playerctl.stopped {
+    background-color: @tertiary_container;
+    border-bottom: 2px solid @tertiary;
+    color: @on_tertiary_container;
+}
+/* END: Playerctl States */
+
+#cpu { color: @primary; }
+#memory { color: @secondary; }
+#custom-screenshot { color: @error; }
+#clock { color: @on_surface; }
+#custom-weather { color: @tertiary; }
+#custom-media { color: @secondary_fixed_dim; }
+#temperature { color: @secondary_fixed; }
+#backlight { color: @tertiary_fixed_dim; }
+#battery { color: @secondary_fixed_dim; }
+#network { color: @primary; }
+#custom-notifications { color: @tertiary; }
+
 #temperature.critical {
-    background-color: rgba(224, 224, 224, 0.7);
-    color: @mantle;
+    background-color: @error;
+    color: @surface_container_lowest;
     animation: blink 1s infinite alternate;
 }
-#backlight { color: @yellow; }
-#battery { color: @peach; }
+
 #battery.charging {
-    background-color: rgba(176, 176, 176, 0.7);
-    color: @mantle;
+    background-color: @primary_container;
+    color: @on_primary_container;
 }
+
 #battery.warning:not(.charging) {
-    background-color: rgba(232, 232, 232, 0.7);
-    color: @mantle;
+    background-color: @error_container;
+    color: @on_error_container;
 }
+
 #battery.critical:not(.charging) {
-    background-color: rgba(224, 224, 224, 0.7);
-    color: @mantle;
+    background-color: @error;
+    color: @on_error;
     animation: blink 0.5s infinite alternate;
 }
-#network { color: @sapphire; }
+
 #network.disconnected {
-    background-color: rgba(224, 224, 224, 0.7);
-    color: @mantle;
+    background-color: @error;
+    color: @on_error;
 }
-#custom-notifications { color: @mauve; }
-#custom-cava-music:hover,
-#custom-playerctl:hover {
-    background: linear-gradient(90deg, rgba(224, 224, 224, 0.5) 0%, rgba(216, 216, 216, 0.5) 100%);
+
+/* START: Pulseaudio & Mic */
+#pulseaudio {
+    color: @primary_fixed;
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 6px;
+}
+
+#pulseaudio.microphone {
+    color: @tertiary;
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 6px;
+}
+
+#pulseaudio.muted {
+    background-color: @surface_container_high;
+    color: @error;
+}
+
+#pulseaudio.microphone.source-muted {
+    background-color: @error_container;
+    color: @tertiary_fixed_dim;
+}
+/* END: Pulseaudio & Mic */
+
+/* START: Workspace Buttons */
+#workspaces {
+    background-color: @surface_container_low;
+    border-radius: 50px;
+    margin-left: 12px;
+    padding: 2px;
+    min-height: 26px;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @outline;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 26px;
+    min-height: 22px;
+    margin: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+}
+
+#workspaces button.active {
+    background-color: @primary_fixed_dim;
+    color: @on_primary_fixed;
+    padding: 0 16px;
+    font-size: 13px;
+}
+
+#workspaces button.empty { color: @outline_variant; }
+
+#workspaces button:hover {
+    background: @foreground;
     color: @crust;
 }
-/* Power menu special hover effect */
-#custom-powermenu:hover {
-    background: linear-gradient(90deg, rgba(224, 224, 224, 0.8) 0%, rgba(208, 208, 208, 0.8) 100%);
+
+#workspaces button.urgent {
+    background-color: @error;
     color: @crust;
+    animation: blink 1s infinite alternate;
 }
-/* Define blink animation */
-@keyframes blink {
-    to {
-        background-color: rgba(224, 224, 224, 0.7);
-        color: @mantle;
-    }
-    
-    from {
-        background-color: rgba(232, 232, 232, 0.7);
-        color: @base;
-    }
-}
+/* END: Workspace Buttons */
+
+/* START: Hover Effects */
 #pulseaudio:hover,
 #pulseaudio.microphone:hover,
 #temperature:hover,
@@ -323,6 +208,51 @@ window#waybar.hidden {
 #custom-cava-music:hover,
 #custom-playerctl:hover,
 #custom-powermenu:hover {
-    background: rgba(208, 208, 208, 0.7);
-    color: @crust;
+    background: @primary_container;
+    color: @on_primary_container;
 }
+/* END: Hover Effects */
+
+/* START: Special Module Effects */
+#custom-playerctl span:hover {
+    animation: scroll 15s linear infinite;
+}
+
+#custom-powermenu {
+    color: @on_surface;
+    min-width: 28px;
+    font-size: 13px;
+}
+
+#custom-powermenu:hover {
+    background: linear-gradient(90deg, @error 0%, @error_container 100%);
+    color: @on_error;
+}
+
+#custom-cava-music:hover,
+#custom-playerctl:hover {
+    background: linear-gradient(90deg, @primary_container 0%, @secondary_container 100%);
+    color: @on_primary_container;
+}
+/* END: Special Module Effects */
+
+/* START: Keyframes */
+@keyframes blink {
+    to {
+        background-color: @error;
+        color: @on_error;
+    }
+    from {
+        background-color: @error_container;
+        color: @on_error_container;
+    }
+}
+
+@keyframes scroll {
+    from { margin-left: 0px; }
+    to { margin-left: -400px; }
+}
+/* END: Keyframes */
+
+/* START: @define-colors (your palette from bottom remains untouched here) */
+/* You already defined them correctly */

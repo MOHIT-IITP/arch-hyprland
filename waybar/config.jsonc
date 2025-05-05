@@ -9,9 +9,9 @@
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["custom/cava-music", "custom/playerctl", "clock", "custom/weather"],
+    "modules-left": ["clock","custom/cava-music", "custom/playerctl", "custom/weather"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
+    "modules-right": ["pulseaudio", "pulseaudio#microphone","bluetooth", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
 
     "hyprland/workspaces": {
         "format": " {icon} {windows}",
@@ -114,7 +114,7 @@
         "format": "{}",
         "escape": true,
         "return-type": "json", 
-        "max-length": 5,
+        "max-length": 10,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl stop",
@@ -125,7 +125,7 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}% ",
         "format-bluetooth": "{volume}% {icon} 󰂯",
         "format-bluetooth-muted": "󰂲 󰖁 {icon}",
         "format-muted": "󰖁",
@@ -153,6 +153,14 @@
         "scroll-step": 5
     },
 
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
+    },
     "custom/notifications": {
         "format": "{icon}",
         "format-icons": {
