@@ -1,0 +1,12 @@
+[config]
+generator = "dark"  # Or "auto", or "light"
+
+# Extraction settings
+[extraction]
+mode = "wallpaper"  # Extract colors from wallpaper
+wallpaper = "auto"  # Auto-detect wallpaper or specify path
+
+[templates.waybar]
+input_path = "templates/colors.css"  # Template file
+output_path = "~/.config/waybar/colors.css"  # Output file
+
