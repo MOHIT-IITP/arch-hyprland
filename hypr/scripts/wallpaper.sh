@@ -13,10 +13,8 @@ fi
 
 echo "Setting wallpaper: $WALLPAPER"
 
-# Set the wallpaper using swww
-swww img "$WALLPAPER" --transition-type grow --transition-pos 0.9,0.1
+swww img "$WALLPAPER" --transition-type center --transition-pos 0.9,0.1 --transition-fps="100" --transition-step="255" 
 
-# Generate theme using matugen (correct subcommand)
 matugen image "$WALLPAPER"
 
 # Reload waybar if it's running

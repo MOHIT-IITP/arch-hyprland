@@ -35,5 +35,5 @@ icon=$(get_icon "$weather_code")
 echo "Location: $LOCATION, Temp: $temperature°C, Code: $weather_code, Desc: $weather_desc" > /tmp/weather_debug.log
 
 # Output JSON for Waybar with more details in tooltip
-echo "{\"text\":\"${temperature}°C ${icon}\", \"tooltip\":\"${weather_desc}, ${temperature}°C, Humidity: ${humidity}%\"}"
+echo "{\"text\":\"${icon} ${temperature}°C \", \"tooltip\":\"${weather_desc}, ${temperature}°C, Humidity: ${humidity}%\"}"
 exit 0
