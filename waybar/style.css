@@ -57,7 +57,7 @@ window#waybar.hidden {
     padding: 0px 12px;
     margin: 0 2px;
     min-height: 20px;
-    color: @on_surface;
+    color: @primary_fixed_dim;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
 /* END: Module Containers */
@@ -84,16 +84,16 @@ window#waybar.hidden {
 /* END: Playerctl States */
 
 #cpu { color: @primary; }
-#memory { color: @secondary; }
+#memory { color: @primary_fixed_dim; }
 #custom-screenshot { color: @error; }
-#clock { color: @on_surface; }
-#custom-weather { color: @tertiary; }
-#custom-media { color: @secondary_fixed_dim; }
-#temperature { color: @secondary_fixed; }
+#clock { color: @primary_fixed_dim; }
+#custom-weather { color: @primary_fixed_dim; }
+#custom-media { color: @primary_fixed_dim; }
+#temperature { color: @primary_fixed_dim; }
 #backlight { color: @tertiary_fixed_dim; }
 #battery { color: @secondary_fixed_dim; }
 #network { color: @primary; }
-#custom-notifications { color: @tertiary; }
+#custom-notifications { color: @primary_fixed_dim; }
 
 #temperature.critical {
     background-color: @error;
@@ -122,9 +122,8 @@ window#waybar.hidden {
     color: @on_error;
 }
 
-/* START: Pulseaudio & Mic */
 #pulseaudio {
-    color: @primary_fixed;
+    color: @primary_fixed_dim;
     margin-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -132,7 +131,7 @@ window#waybar.hidden {
 }
 
 #pulseaudio.microphone {
-    color: @tertiary;
+    color: @primary_fixed_dim;
     margin-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
