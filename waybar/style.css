@@ -23,6 +23,7 @@ window#waybar {
     min-height: 28px;
 }
 
+
 window#waybar.hidden {
     opacity: 0.2;
 }
@@ -45,7 +46,6 @@ window#waybar.hidden {
 #custom-media,
 #temperature,
 #backlight,
-#battery,
 #network,
 #custom-notifications,
 #bluetooth,
@@ -66,6 +66,23 @@ window#waybar.hidden {
 #custom-playerctl.playing {
     background-color: @primary_container;
     border-bottom: 2px solid @primary;
+    color: @on_primary_container;
+}
+
+#custom-colorpicker {
+    background-color: @surface_container;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 12px;
+    margin: 0 2px;
+    min-height: 20px;
+    color: @tertiary_fixed_dim;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#custom-colorpicker:hover {
+    background: @primary_container;
     color: @on_primary_container;
 }
 
@@ -91,7 +108,6 @@ window#waybar.hidden {
 #custom-media { color: @primary_fixed_dim; }
 #temperature { color: @primary_fixed_dim; }
 #backlight { color: @tertiary_fixed_dim; }
-#battery { color: @secondary_fixed_dim; }
 #network { color: @primary; }
 #custom-notifications { color: @primary_fixed_dim; }
 
@@ -99,22 +115,6 @@ window#waybar.hidden {
     background-color: @error;
     color: @surface_container_lowest;
     animation: blink 1s infinite alternate;
-}
-
-#battery.charging {
-    background-color: @primary_container;
-    color: @on_primary_container;
-}
-
-#battery.warning:not(.charging) {
-    background-color: @error_container;
-    color: @on_error_container;
-}
-
-#battery.critical:not(.charging) {
-    background-color: @error;
-    color: @on_error;
-    animation: blink 0.5s infinite alternate;
 }
 
 #network.disconnected {
@@ -151,7 +151,7 @@ window#waybar.hidden {
 
 /* START: Workspace Buttons */
 #workspaces {
-    background-color: @surface_container_low;
+    background-color: @background;
     border-radius: 50px;
     margin-left: 12px;
     padding: 2px;
@@ -160,7 +160,7 @@ window#waybar.hidden {
 
 #workspaces button {
     background-color: transparent;
-    color: @outline;
+    color: @primary_fixed_dim;
     border-radius: 50px;
     font-weight: bold;
     font-size: 12px;
@@ -198,7 +198,6 @@ window#waybar.hidden {
 #pulseaudio.microphone:hover,
 #temperature:hover,
 #backlight:hover,
-#battery:hover,
 #network:hover,
 #custom-notifications:hover,
 #cpu:hover,

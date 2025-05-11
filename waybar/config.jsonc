@@ -11,7 +11,7 @@
 
     "modules-left": ["clock","custom/cava-music", "custom/playerctl", "custom/weather"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "pulseaudio#microphone","bluetooth", "network", "cpu", "memory", "custom/screenshot", "custom/notifications", "tray"],
+    "modules-right": ["pulseaudio", "pulseaudio#microphone","bluetooth", "network", "cpu", "memory", "custom/screenshot","custom/colorpicker", "custom/notifications", "tray"],
 
     "hyprland/workspaces": {
         "format": " {icon} {windows}",
@@ -58,6 +58,13 @@
         "all-outputs": true,
         "sort-by-number": true,
         "show-special": false 
+    },
+
+    "custom/colorpicker": {
+        "format": "",
+        "tooltip": "Pick a color",
+        "on-click": "hyprpicker",
+        "interval": "once"
     },
 
     "custom/weather": {
