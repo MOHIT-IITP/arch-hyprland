@@ -1,6 +1,5 @@
 @import url("/home/mohiitp/.config/waybar/colors.css");
 
-
 * {
     border: none;
     border-radius: 0;
@@ -22,7 +21,6 @@ window#waybar {
     padding: 2px 0;
     min-height: 28px;
 }
-
 
 window#waybar.hidden {
     opacity: 0.2;
@@ -51,6 +49,7 @@ window#waybar.hidden {
 #bluetooth,
 #tray {
     background-color: @surface_container;
+    border: 2px solid @primary_container; /* Added border */
     border-radius: 16px;
     font-weight: bold;
     font-size: 12px;
@@ -71,6 +70,7 @@ window#waybar.hidden {
 
 #custom-colorpicker {
     background-color: @surface_container;
+    border: 2px solid @outline_variant; /* Added border */
     border-radius: 16px;
     font-weight: bold;
     font-size: 12px;
@@ -153,6 +153,7 @@ window#waybar.hidden {
 #workspaces {
     background-color: @background;
     border-radius: 50px;
+    border: 2px solid @primary_container; /* Added border */
     margin-left: 12px;
     padding: 2px;
     min-height: 26px;
@@ -253,6 +254,3 @@ window#waybar.hidden {
     to { margin-left: -400px; }
 }
 /* END: Keyframes */
-
-/* START: @define-colors (your palette from bottom remains untouched here) */
-/* You already defined them correctly */
