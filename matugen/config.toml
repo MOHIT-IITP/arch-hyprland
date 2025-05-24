@@ -10,3 +10,7 @@ wallpaper = "auto"  # Auto-detect wallpaper or specify path
 input_path = "templates/colors.css"  # Template file
 output_path = "~/.config/waybar/colors.css"  # Output file
 
+[templates.hyprland]
+input_path = "templates/hypr.conf"  # Template file
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
