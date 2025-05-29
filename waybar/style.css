@@ -4,7 +4,7 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
-    font-size: 14px;
+    font-size: 12px;           /* Decreased font size */
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -18,8 +18,8 @@ window#waybar {
     border-radius: 36px;
     transition-duration: 0.2s;
     transition-property: background-color;
-    padding: 2px 0;
-    min-height: 28px;
+    padding: 0px 0;            /* Decreased padding */
+    min-height: 18px;          /* Decreased min-height */
 }
 
 window#waybar.hidden {
@@ -28,8 +28,8 @@ window#waybar.hidden {
 /* END: Waybar Window */
 
 /* START: Module Containers */
-.modules-left, .modules-center { margin: 0 6px; }
-.modules-right { margin-right: 12px; }
+.modules-left, .modules-center { margin: 0 4px; } /* Slightly reduced margin */
+.modules-right { margin-right: 8px; }
 
 #custom-cava-music,
 #custom-playerctl,
@@ -49,13 +49,13 @@ window#waybar.hidden {
 #bluetooth,
 #tray {
     background-color: @surface_container;
-    border: 2px solid @primary_container; /* Added border */
-    border-radius: 16px;
+    border: 2px solid @primary_container;
+    border-radius: 12px;       /* Slightly reduced radius */
     font-weight: bold;
-    font-size: 12px;
-    padding: 0px 12px;
-    margin: 0 2px;
-    min-height: 20px;
+    font-size: 11px;           /* Decreased font size */
+    padding: 0px 6px;          /* Decreased padding */
+    margin: 0 1px;             /* Decreased margin */
+    min-height: 12px;          /* Decreased min-height */
     color: @primary_fixed_dim;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -70,13 +70,13 @@ window#waybar.hidden {
 
 #custom-colorpicker {
     background-color: @surface_container;
-    border: 2px solid @outline_variant; /* Added border */
-    border-radius: 16px;
+    border: 2px solid @outline_variant;
+    border-radius: 12px;
     font-weight: bold;
-    font-size: 12px;
-    padding: 0px 12px;
-    margin: 0 2px;
-    min-height: 20px;
+    font-size: 11px;
+    padding: 0px 7px;
+    margin: 0 1px;
+    min-height: 12px;
     color: @tertiary_fixed_dim;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
 }
@@ -127,7 +127,7 @@ window#waybar.hidden {
     margin-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    padding-right: 6px;
+    padding-right: 4px;        /* Decreased padding */
 }
 
 #pulseaudio.microphone {
@@ -135,7 +135,7 @@ window#waybar.hidden {
     margin-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    padding-left: 6px;
+    padding-left: 4px;         /* Decreased padding */
 }
 
 #pulseaudio.muted {
@@ -152,38 +152,39 @@ window#waybar.hidden {
 /* START: Workspace Buttons */
 #workspaces {
     background-color: @background;
-    border-radius: 50px;
-    border: 2px solid @primary_container; /* Added border */
-    margin-left: 12px;
-    padding: 2px;
-    min-height: 26px;
+    border-radius: 36px;
+    margin-left: 8px;          /* Decreased margin */
+    padding: 1px;              /* Decreased padding */
+    min-height: 16px;          /* Decreased min-height */
 }
 
 #workspaces button {
     background-color: transparent;
     color: @primary_fixed_dim;
-    border-radius: 50px;
+    border-radius: 36px;
     font-weight: bold;
-    font-size: 12px;
-    min-width: 26px;
-    min-height: 22px;
-    margin: 2px;
-    padding: 0px 9px 0px 0px;
+    font-size: 11px;           /* Decreased font size */
+    min-width: 18px;           /* Decreased min-width */
+    min-height: 12px;          /* Decreased min-height */
+    margin: 1px;               /* Decreased margin */
+    padding: 0px 5px 0px 0px;  /* Decreased padding */
+    border: 2px solid @primary_container;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
 }
 
 #workspaces button.active {
     background-color: @primary_fixed_dim;
+    border: 0px solid @primary_container;
     color: @on_primary_fixed;
-    padding: 0 17px 0px 10px;
-    font-size: 13px;
+    padding: 0 10px 0px 6px;   /* Decreased padding */
+    font-size: 12px;
 }
 
 #workspaces button.empty { color: @outline_variant; }
 
 #workspaces button:hover {
     background: @outline_variant;
-    padding-right: 9;
+    padding-right: 5px;
     color: @crust;
 }
 
@@ -221,8 +222,8 @@ window#waybar.hidden {
 
 #custom-powermenu {
     color: @on_surface;
-    min-width: 28px;
-    font-size: 13px;
+    min-width: 20px;           /* Decreased min-width */
+    font-size: 12px;           /* Decreased font size */
 }
 
 #custom-powermenu:hover {
