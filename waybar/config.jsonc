@@ -9,7 +9,7 @@
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["clock","custom/cava-music", "custom/playerctl", "custom/weather"],
+    "modules-left": ["temperature","clock","custom/cava-music", "custom/playerctl",  "custom/cputemp"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "pulseaudio#microphone","bluetooth", "network", "cpu", "memory", "custom/screenshot","custom/colorpicker", "custom/notifications", "tray"],
 
@@ -24,6 +24,7 @@
             "firefox": "󰈹",
             "foot": "󰽒",
             "kitty": "",
+            "zen":"",
             "alacritty": "",
             "ghostty": "",
             "code": "󰨞",
@@ -66,14 +67,6 @@
         "tooltip": "Pick a color",
         "on-click": "hyprpicker",
         "interval": "once"
-    },
-
-    "custom/weather": {
-        "format": "{} ",
-        "tooltip": true,
-        "interval": 3600,
-        "exec": "~/.config/waybar/scripts/weather.sh",
-        "return-type": "json"
     },
 
     "custom/screenshot": {
@@ -163,6 +156,14 @@
         "tooltip-format": "{format_source}",
         "scroll-step": 5
     },
+    "custom/cputemp": {
+        "format": "🌡️ {}°C",
+        "exec": "sensors | awk '/Tctl:/ {gsub(/\\+|°C/, \"\", $2); print $2}'",
+        "interval": 5,
+        "return-type": "plain"
+    },
+
+
 
     "bluetooth": {
         "format": " {status}",

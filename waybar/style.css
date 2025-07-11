@@ -15,7 +15,7 @@
 window#waybar {
     background-color: transparent;
     color: @on_surface;
-    border-radius: 36px;
+    border-radius: 8px;
     transition-duration: 0.2s;
     transition-property: background-color;
     padding: 0px 0;            /* Decreased padding */
@@ -32,6 +32,7 @@ window#waybar.hidden {
 .modules-right { margin-right: 8px; }
 
 #custom-cava-music,
+#custom-cputemp,
 #custom-playerctl,
 #cpu,
 #memory,
@@ -50,7 +51,7 @@ window#waybar.hidden {
 #tray {
     background-color: @surface_container;
     border: 2px solid @primary_container;
-    border-radius: 12px;       /* Slightly reduced radius */
+    border-radius: 8px;       /* Slightly reduced radius */
     font-weight: bold;
     font-size: 11px;           /* Decreased font size */
     padding: 0px 6px;          /* Decreased padding */
@@ -68,10 +69,22 @@ window#waybar.hidden {
     color: @on_primary_container;
 }
 
+#custom-cputemp {
+    background-color: @surface_container;
+    border: 2px solid @outline_variant;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 0px 7px;
+    margin: 0 1px;
+    min-height: 12px;
+    color: @tertiary_fixed_dim;
+}
+
 #custom-colorpicker {
     background-color: @surface_container;
     border: 2px solid @outline_variant;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: bold;
     font-size: 11px;
     padding: 0px 7px;
@@ -152,7 +165,7 @@ window#waybar.hidden {
 /* START: Workspace Buttons */
 #workspaces {
     background-color: @background;
-    border-radius: 36px;
+    border-radius: 8px;
     margin-left: 8px;          /* Decreased margin */
     padding: 1px;              /* Decreased padding */
     min-height: 16px;          /* Decreased min-height */
@@ -161,7 +174,7 @@ window#waybar.hidden {
 #workspaces button {
     background-color: transparent;
     color: @primary_fixed_dim;
-    border-radius: 36px;
+    border-radius: 8px;
     font-weight: bold;
     font-size: 11px;           /* Decreased font size */
     min-width: 18px;           /* Decreased min-width */
