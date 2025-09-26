@@ -1,5 +1,8 @@
 [config]
 generator = "dark"  # Or "auto", or "light"
+command = "swww"
+
+arguments = ["img", "--transition-type", "center"]
 
 # Extraction settings
 [extraction]
@@ -9,6 +12,7 @@ wallpaper = "auto"  # Auto-detect wallpaper or specify path
 [templates.waybar]
 input_path = "templates/colors.css"  # Template file
 output_path = "~/.config/waybar/colors.css"  # Output file
+post_hook = 'pkill waybar; waybar &'
 
 [templates.hyprland]
 input_path = "templates/hypr.conf"  # Template file

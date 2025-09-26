@@ -1,25 +1,30 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 10,
-    "spacing": 0,
+    "height": 20,
     "output": ["HDMI-A-1"],
     "margin-top": 5,
     "margin-bottom": 3,
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["temperature","clock","custom/cava-music", "custom/playerctl",  "custom/cputemp"],
+    "modules-left": ["clock"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "pulseaudio#microphone","bluetooth", "network", "cpu", "memory", "custom/screenshot","custom/colorpicker", "custom/notifications", "tray"],
+    "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot"],
 
     "hyprland/workspaces": {
-        "format": " {icon} {windows}",
+        "format": "{name}",
         "format-window-separator": " ",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "window-rewrite-default": "",
-        "window-rewrite-default": "",
+	"persistent-workspaces":{
+		"1":[],
+		"2":[],
+		"3":[],
+		"4":[],
+		"5":[]
+	},
         "window-rewrite": {
             "firefox": "󰈹",
             "foot": "󰽒",
@@ -42,15 +47,15 @@
             "org.pwmt.zathura": "󰈙"
         },
         "format-icons": {
-            "1": "󰰨",
-            "2": "󰰄",
-            "3": "󰰖",
-            "4": "󰰙",
-            "5": "󰰇",
-            "6": "󰰊",
-            "7": "󰰍",
-            "8": "󰰓",
-            "9": "󰰐",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
             "10": "10",
             "urgent": "",
             "focused": "",
@@ -58,8 +63,7 @@
         },
         "on-click": "activate",
         "all-outputs": true,
-        "sort-by-number": true,
-        "show-special": false 
+        "sort-by-number": true
     },
 
     "custom/colorpicker": {
@@ -70,14 +74,14 @@
     },
 
     "custom/screenshot": {
-        "format": "󰹑",
+        "format": "Sshot",
         "tooltip": "Screenshot",
         "on-click": "grim -g \"$(slurp)\" - | wl-copy && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Copied to clipboard'",
         "on-click-right": "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Saved to Pictures/Screenshots'",
         "on-click-middle": "grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga && notify-send 'Screenshot' 'Fullscreen saved to Pictures/Screenshots'"
     },
     "clock": {
-        "format": "󰥔 {:%I:%M %p}",
+        "format": "{:%I:%M}",
         "format-alt": "{:%A, %B %d, %Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60
@@ -96,7 +100,7 @@
 
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) 󰖩",
-        "format-ethernet": "󰈀",
+        "format-ethernet": "Net",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
@@ -132,15 +136,15 @@
         "format": "{icon} {volume}% ",
         "format-bluetooth": "{volume}% {icon} 󰂯",
         "format-bluetooth-muted": "󰂲 󰖁 {icon}",
-        "format-muted": "󰖁",
+        "format-muted": "󰖁 ",
         "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰋎",
-            "headset": "󰋎",
-            "phone": "󰏲",
-            "portable": "󰄝",
-            "car": "󰄋",
-            "default": ["󰕿", "󰖀", "󰕾"]
+            "headphone": "󰋋 ",
+            "hands-free": "󰋎 ",
+            "headset": "󰋎 ",
+            "phone": "󰏲 ",
+            "portable": "󰄝 ",
+            "car": "󰄋 ",
+            "default": ["󰕿 ", "󰖀 ", "󰕾 "]
         },
         "on-click": "pavucontrol",
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -149,7 +153,7 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": "󰍬 {volume}%",
-        "format-source-muted": "󰍭",
+        "format-source-muted": "󰍭 {volume}%",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol",
         "tooltip": true,

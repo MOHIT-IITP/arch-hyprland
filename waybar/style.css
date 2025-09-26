@@ -1,36 +1,33 @@
 @import url("/home/mohiitp/.config/waybar/colors.css");
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
-    font-size: 12px;           /* Decreased font size */
-    min-height: 0;
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
     margin: 0;
     padding: 0;
+    min-height: 0;
 }
-/* END: Base Reset */
 
-/* START: Waybar Window */
 window#waybar {
     background-color: transparent;
     color: @on_surface;
-    border-radius: 8px;
-    transition-duration: 0.2s;
-    transition-property: background-color;
-    padding: 0px 0;            /* Decreased padding */
-    min-height: 18px;          /* Decreased min-height */
+    transition: background-color 0.2s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
-/* END: Waybar Window */
 
-/* START: Module Containers */
-.modules-left, .modules-center { margin: 0 4px; } /* Slightly reduced margin */
-.modules-right { margin-right: 8px; }
+.modules-left, .modules-center {
+    margin: 0 4px;
+}
 
+.modules-right {
+    margin-right: 8px;
+}
+
+/* Main module styling */
 #custom-cava-music,
 #custom-cputemp,
 #custom-playerctl,
@@ -49,106 +46,17 @@ window#waybar.hidden {
 #custom-notifications,
 #bluetooth,
 #tray {
-    background-color: @surface_container;
-    border: 2px solid @primary_container;
-    border-radius: 8px;       /* Slightly reduced radius */
-    font-weight: bold;
-    font-size: 11px;           /* Decreased font size */
-    padding: 0px 6px;          /* Decreased padding */
-    margin: 0 1px;             /* Decreased margin */
-    min-height: 12px;          /* Decreased min-height */
-    color: @primary_fixed_dim;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-/* END: Module Containers */
-
-/* START: Playerctl States */
-#custom-playerctl.playing {
-    background-color: @primary_container;
-    border-bottom: 2px solid @primary;
-    color: @on_primary_container;
-}
-
-#custom-cputemp {
-    background-color: @surface_container;
-    border: 2px solid @outline_variant;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 11px;
-    padding: 0px 7px;
+    background-color: @primary_fixed;
+    border-radius: 100px;
+    padding: 0 10px;
     margin: 0 1px;
-    min-height: 12px;
-    color: @tertiary_fixed_dim;
-}
-
-#custom-colorpicker {
-    background-color: @surface_container;
-    border: 2px solid @outline_variant;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 11px;
-    padding: 0px 7px;
-    margin: 0 1px;
-    min-height: 12px;
-    color: @tertiary_fixed_dim;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
-}
-
-#custom-colorpicker:hover {
-    background: @primary_container;
-    color: @on_primary_container;
-}
-
-#custom-playerctl.paused {
-    background-color: @secondary_container;
-    border-bottom: 2px solid @secondary;
-    font-style: italic;
-    color: @on_secondary_container;
-}
-
-#custom-playerctl.stopped {
-    background-color: @tertiary_container;
-    border-bottom: 2px solid @tertiary;
-    color: @on_tertiary_container;
-}
-/* END: Playerctl States */
-
-#cpu { color: @primary; }
-#memory { color: @primary_fixed_dim; }
-#custom-screenshot { color: @error; }
-#clock { color: @primary_fixed_dim; }
-#custom-weather { color: @primary_fixed_dim; }
-#custom-media { color: @primary_fixed_dim; }
-#temperature { color: @primary_fixed_dim; }
-#backlight { color: @tertiary_fixed_dim; }
-#network { color: @primary; }
-#custom-notifications { color: @primary_fixed_dim; }
-
-#temperature.critical {
-    background-color: @error;
-    color: @surface_container_lowest;
-    animation: blink 1s infinite alternate;
+    color: @background;
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.68);
 }
 
 #network.disconnected {
     background-color: @error;
     color: @on_error;
-}
-
-#pulseaudio {
-    color: @primary_fixed_dim;
-    margin-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-right: 4px;        /* Decreased padding */
-}
-
-#pulseaudio.microphone {
-    color: @primary_fixed_dim;
-    margin-left: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding-left: 4px;         /* Decreased padding */
 }
 
 #pulseaudio.muted {
@@ -160,83 +68,43 @@ window#waybar.hidden {
     background-color: @error_container;
     color: @tertiary_fixed_dim;
 }
-/* END: Pulseaudio & Mic */
 
-/* START: Workspace Buttons */
+/* Workspaces */
 #workspaces {
-    background-color: @background;
-    border-radius: 8px;
-    margin-left: 8px;          /* Decreased margin */
-    padding: 1px;              /* Decreased padding */
-    min-height: 16px;          /* Decreased min-height */
+    background-color: transparent;
+    font-weight: 800;
+    min-height:0;
 }
 
 #workspaces button {
-    background-color: transparent;
-    color: @primary_fixed_dim;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 11px;           /* Decreased font size */
-    min-width: 18px;           /* Decreased min-width */
-    min-height: 12px;          /* Decreased min-height */
-    margin: 1px;               /* Decreased margin */
-    padding: 0px 5px 0px 0px;  /* Decreased padding */
-    border: 2px solid @primary_container;
-    transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+    background-color: @primary_fixed_dim;
+    color: @on_primary_fixed;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0 2px;
+    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-    background-color: @primary_fixed_dim;
-    border: 0px solid @primary_container;
-    color: @on_primary_fixed;
-    padding: 0 10px 0px 6px;   /* Decreased padding */
-    font-size: 12px;
+    background-color: @inverse_primary;
+    color: @primary_fixed_dim;
+    border-radius: 100px;
+    font-weight: 800;
+    padding: 1px 20px;
 }
 
-#workspaces button.empty { color: @outline_variant; }
 
-#workspaces button:hover {
-    background: @outline_variant;
-    padding-right: 5px;
-    color: @crust;
-}
 
 #workspaces button.urgent {
     background-color: @error;
     color: @crust;
     animation: blink 1s infinite alternate;
 }
-/* END: Workspace Buttons */
 
-/* START: Hover Effects */
-#pulseaudio:hover,
-#pulseaudio.microphone:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#custom-notifications:hover,
-#cpu:hover,
-#memory:hover,
-#custom-screenshot:hover,
-#clock:hover,
-#custom-weather:hover,
-#custom-cava-music:hover,
-#custom-playerctl:hover,
-#custom-powermenu:hover {
-    background: @primary_container;
-    color: @on_primary_container;
-}
-/* END: Hover Effects */
-
-/* START: Special Module Effects */
-#custom-playerctl span:hover {
-    animation: scroll 15s linear infinite;
-}
-
+/* Power menu */
 #custom-powermenu {
     color: @on_surface;
-    min-width: 20px;           /* Decreased min-width */
-    font-size: 12px;           /* Decreased font size */
+    font-size: 12px;
 }
 
 #custom-powermenu:hover {
@@ -244,27 +112,21 @@ window#waybar.hidden {
     color: @on_error;
 }
 
+/* Media controls hover */
 #custom-cava-music:hover,
 #custom-playerctl:hover {
     background: linear-gradient(90deg, @primary_container 0%, @secondary_container 100%);
     color: @on_primary_container;
 }
-/* END: Special Module Effects */
 
-/* START: Keyframes */
+/* Animations */
 @keyframes blink {
-    to {
-        background-color: @error;
-        color: @on_error;
-    }
     from {
         background-color: @error_container;
         color: @on_error_container;
     }
+    to {
+        background-color: @error;
+        color: @on_error;
+    }
 }
-
-@keyframes scroll {
-    from { margin-left: 0px; }
-    to { margin-left: -400px; }
-}
-/* END: Keyframes */
