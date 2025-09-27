@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Configuration
-WALLPAPER_DIR="$HOME/pix/wall"  # Change to your wallpaper directory
-INTERVAL=1800  # Change wallpaper every 30 minutes (1800 seconds)
+WALLPAPER_DIR="$HOME/pix/wall"  
 LOG_FILE="$HOME/.cache/wallpaper_changer.log"
 
 # Function to log messages
@@ -31,10 +30,7 @@ change_wallpaper() {
     fi
 }
 
-# Main loop
+# Run once
 log_message "Wallpaper changer started"
+change_wallpaper
 
-while true; do
-    change_wallpaper
-    sleep "$INTERVAL"
-done

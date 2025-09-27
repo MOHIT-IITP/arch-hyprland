@@ -3,14 +3,14 @@
   "position": "top",
   "height": 20,
   "output": ["HDMI-A-1"],
-  "margin-top": 5,
-  "margin-bottom": 3,
+  "margin-top": 10,
+  "margin-bottom": 5,
   "margin-left": 10,
   "margin-right": 10,
 
   "modules-left": ["clock"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "cpu", "memory", "custom/screenshot"],
+  "modules-right": ["pulseaudio", "pulseaudio#microphone", "custom/screenshot"],
 
   "hyprland/workspaces": {
     "format": "{name}",

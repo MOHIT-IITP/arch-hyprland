@@ -55,13 +55,14 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [username]
-#show_always = true
-#style_user = "bg:surface0 fg:text"
-#style_root = "bg:surface0 fg:text"
-#format = '[ $user ]($style)'
+# show_always = true
+# style_user = "bg:transparent fg:color1"
+# style_root = "bg:transparent fg:color1"
+# format = '[ $user ]($style)'
 
 [directory]
 style = "sapphire"
+# style = "fg:color8"
 format = "[ $path ]($style)"
 #truncation_length = 4
 #truncation_symbol = "…/"
@@ -98,9 +99,9 @@ when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "at $output"
 
 [git_branch]
-symbol = "[](black) "
-style = "fg:lavender bg:black"
-format =  '  on [$symbol$branch]($style)[](black)'
+symbol = "[](color2) "
+style = "fg:color1 bg:color2"
+format =  '  on [$symbol$branch]($style)[](color2)'
 
 [git_status]
 format = ' [($all_status$ahead_behind )]($style)'
@@ -157,7 +158,7 @@ disabled = true
 
 [character]
 disabled = false
-success_symbol = "[❯](color9 bold)"
+success_symbol = "[❯](color8 bold)"
 error_symbol = "[❯](@{error})"
 vicmd_symbol = "[❮](#f9e2af)"
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
